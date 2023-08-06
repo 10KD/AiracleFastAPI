@@ -1,11 +1,8 @@
-from sklearn.linear_model import LinearRegression
+from joblib import load
 import numpy as np
 
-# Train a model
-model = LinearRegression()
-X = np.array([[1], [2], [3]])
-y = np.array([2, 4, 6])
-model.fit(X, y)
+# Load pre-trained model from a file
+model = load('pretrained_models/model.joblib')
 
 def predict_delay(input_data: float):
     input_array = np.array([[input_data]])
