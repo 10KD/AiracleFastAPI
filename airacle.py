@@ -19,8 +19,10 @@ async def shutdown():
 @app.post("/predict/")
 async def predict(arg: InputData):
     prediction_result = predict_delay(arg.input_data)
-
     # Store in database
     await save_prediction(arg.input_data, prediction_result)
+    return {"prediction": [float(result) for result in prediction_result]}
 
-    return {"prediction": prediction_result}
+
+
+
