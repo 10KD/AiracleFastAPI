@@ -4,7 +4,7 @@ from database import database, save_prediction
 from model import predict_delay
 
 class InputData(BaseModel):
-    input_data: float
+    input_data: str
 
 app = FastAPI()
 
