@@ -3,7 +3,7 @@ import numpy as np
 import json
 
 # Load pre-trained model from a file
-model = load('pretrained_models/trained_model.joblib')
+model = load('pretrained_models/trained_logistic_model.joblib')
 
 def predict_delay(input_json: str):
     input_data = json.loads(input_json)  # Decode the JSON string to get the array
