@@ -12,6 +12,26 @@ This file defines the main FastAPI application. It includes:
 - **Startup and Shutdown Events**: Functions to connect and disconnect from the database at startup and shutdown.
 - **Prediction Endpoint**: A POST request to `/predict/` that takes flight data, predicts delays using the `predict_delay` function, saves the result in the PostgreSQL database, and returns the prediction.
 
+- **Input**:
+```
+{
+    "input_data": "[1,10165,10299]"
+}
+```
+- **Output**:
+```
+{
+    "prediction": "[
+        0.5957711115127357,  // Probability for a delay of 0-15 minutes
+        0.14842206056050344, // Probability for a delay of 15-30 minutes
+        0.07434279263763184, // Probability for a delay of 30-45 minutes
+        0.18146403528912905  // Probability for a delay of 45 minutes or more
+    ]"
+}
+
+
+```
+
 ## `database.py`: Database Management
 
 This file manages the database connection and schema using SQLAlchemy:
