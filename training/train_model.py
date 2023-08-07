@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 from joblib import dump
 
 # Load Data
-data = pd.read_csv('/Users/user/Desktop/Repos/testproj/flights.csv')
+data = pd.read_csv('/Users/the_one/Desktop/Repos/flights.csv')
 
 # Drop rows with NaN in 'DepDelay'
 data.dropna(subset=['DepDelay'], inplace=True)
